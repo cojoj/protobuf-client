@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ProtobufSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dee-7L-nh1">
+                                <rect key="frame" x="0.0" y="79" width="375" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVM-B5-KUP">
+                                <rect key="frame" x="173.5" y="638" width="28" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="m9P-SO-YoY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6i9-Zz-kKE">
+                                <rect key="frame" x="66" y="43" width="242" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="4Gr-7f-euW"/>
+                                    <constraint firstAttribute="width" constant="242" id="PwJ-dP-soP"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="JSON"/>
+                                    <segment title="Protobuf"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6i9-Zz-kKE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9xi-D1-2Id"/>
+                            <constraint firstItem="dee-7L-nh1" firstAttribute="top" secondItem="6i9-Zz-kKE" secondAttribute="bottom" constant="8" id="IHZ-zL-MI7"/>
+                            <constraint firstItem="TVM-B5-KUP" firstAttribute="top" secondItem="dee-7L-nh1" secondAttribute="bottom" constant="8" id="L6N-GZ-Cmu"/>
+                            <constraint firstItem="6i9-Zz-kKE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="OYV-C8-Yvz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TVM-B5-KUP" secondAttribute="bottom" constant="8" id="UIy-ZD-lj9"/>
+                            <constraint firstItem="dee-7L-nh1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WCT-eZ-dW9"/>
+                            <constraint firstItem="TVM-B5-KUP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bbs-Jr-Mbc"/>
+                            <constraint firstAttribute="trailing" secondItem="dee-7L-nh1" secondAttribute="trailing" id="ey7-Ic-pyo"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+</document>
