@@ -24,16 +24,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dee-7L-nh1">
                                 <rect key="frame" x="0.0" y="79" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="jb4-yC-FuP"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Zfi-2l-Vst"/>
+                                </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVM-B5-KUP">
-                                <rect key="frame" x="173.5" y="638" width="28" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="m9P-SO-YoY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6i9-Zz-kKE">
                                 <rect key="frame" x="66" y="43" width="242" height="29"/>
                                 <constraints>
@@ -45,19 +40,49 @@
                                     <segment title="Protobuf"/>
                                 </segments>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVM-B5-KUP" userLabel="Duration">
+                                <rect key="frame" x="159" y="638" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="gj7-Jd-Ggp"/>
+                                    <constraint firstAttribute="height" constant="21" id="m9P-SO-YoY"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="y2P-TY-eJq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBd-Jk-x5C">
+                                <rect key="frame" x="16" y="633" width="64" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="G9W-Fz-xcg"/>
+                                    <constraint firstAttribute="width" constant="64" id="O1h-yM-P8J"/>
+                                </constraints>
+                                <state key="normal" title="Get list"/>
+                                <connections>
+                                    <action selector="getListButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mVJ-pJ-s46"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6i9-Zz-kKE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9xi-D1-2Id"/>
                             <constraint firstItem="dee-7L-nh1" firstAttribute="top" secondItem="6i9-Zz-kKE" secondAttribute="bottom" constant="8" id="IHZ-zL-MI7"/>
-                            <constraint firstItem="TVM-B5-KUP" firstAttribute="top" secondItem="dee-7L-nh1" secondAttribute="bottom" constant="8" id="L6N-GZ-Cmu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wBd-Jk-x5C" secondAttribute="bottom" constant="4" id="NSd-2c-6ei"/>
                             <constraint firstItem="6i9-Zz-kKE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="OYV-C8-Yvz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TVM-B5-KUP" secondAttribute="bottom" constant="8" id="Tnt-Cn-7Gb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TVM-B5-KUP" secondAttribute="bottom" constant="8" id="UIy-ZD-lj9"/>
                             <constraint firstItem="dee-7L-nh1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WCT-eZ-dW9"/>
-                            <constraint firstItem="TVM-B5-KUP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bbs-Jr-Mbc"/>
                             <constraint firstAttribute="trailing" secondItem="dee-7L-nh1" secondAttribute="trailing" id="ey7-Ic-pyo"/>
+                            <constraint firstItem="wBd-Jk-x5C" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="jTk-VN-MUg"/>
+                            <constraint firstItem="wBd-Jk-x5C" firstAttribute="top" secondItem="dee-7L-nh1" secondAttribute="bottom" constant="3" id="o1r-9D-9pd"/>
+                            <constraint firstAttribute="trailing" secondItem="TVM-B5-KUP" secondAttribute="trailing" constant="16" id="qQO-OU-nww"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="acceptHeaderSegmentedControl" destination="6i9-Zz-kKE" id="Ami-zW-jDN"/>
+                        <outlet property="durationLabel" destination="TVM-B5-KUP" id="AKi-lf-wYR"/>
+                        <outlet property="tableView" destination="dee-7L-nh1" id="NUF-cv-Ks6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

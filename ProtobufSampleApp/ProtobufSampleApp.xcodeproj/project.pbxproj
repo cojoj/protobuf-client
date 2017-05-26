@@ -14,6 +14,8 @@
 		907F3C2F1ED5A8E3005FE929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907F3C2D1ED5A8E3005FE929 /* LaunchScreen.storyboard */; };
 		907F3C3A1ED5A8E3005FE929 /* ProtobufSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F3C391ED5A8E3005FE929 /* ProtobufSampleAppTests.swift */; };
 		907F3C451ED5A8E3005FE929 /* ProtobufSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F3C441ED5A8E3005FE929 /* ProtobufSampleAppUITests.swift */; };
+		907F3C531ED5B836005FE929 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F3C521ED5B836005FE929 /* HttpClient.swift */; };
+		907F3C561ED5BA48005FE929 /* DataModel.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F3C551ED5BA48005FE929 /* DataModel.pb.swift */; };
 		9BDD7A256D9E72D2457103B2 /* Pods_ProtobufSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28444CC7979CAC0BA4D2449E /* Pods_ProtobufSampleApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		907F3C401ED5A8E3005FE929 /* ProtobufSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProtobufSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		907F3C441ED5A8E3005FE929 /* ProtobufSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtobufSampleAppUITests.swift; sourceTree = "<group>"; };
 		907F3C461ED5A8E3005FE929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		907F3C521ED5B836005FE929 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		907F3C551ED5BA48005FE929 /* DataModel.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.pb.swift; sourceTree = "<group>"; };
 		A95FC2D32F517B2654341E26 /* Pods-ProtobufSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtobufSampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProtobufSampleApp/Pods-ProtobufSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,12 +117,14 @@
 		907F3C231ED5A8E3005FE929 /* ProtobufSampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				907F3C551ED5BA48005FE929 /* DataModel.pb.swift */,
 				907F3C241ED5A8E3005FE929 /* AppDelegate.swift */,
 				907F3C261ED5A8E3005FE929 /* ViewController.swift */,
 				907F3C281ED5A8E3005FE929 /* Main.storyboard */,
 				907F3C2B1ED5A8E3005FE929 /* Assets.xcassets */,
 				907F3C2D1ED5A8E3005FE929 /* LaunchScreen.storyboard */,
 				907F3C301ED5A8E3005FE929 /* Info.plist */,
+				907F3C521ED5B836005FE929 /* HttpClient.swift */,
 			);
 			path = ProtobufSampleApp;
 			sourceTree = "<group>";
@@ -337,7 +343,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				907F3C561ED5BA48005FE929 /* DataModel.pb.swift in Sources */,
 				907F3C271ED5A8E3005FE929 /* ViewController.swift in Sources */,
+				907F3C531ED5B836005FE929 /* HttpClient.swift in Sources */,
 				907F3C251ED5A8E3005FE929 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +601,7 @@
 				907F3C4B1ED5A8E3005FE929 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		907F3C4C1ED5A8E3005FE929 /* Build configuration list for PBXNativeTarget "ProtobufSampleAppTests" */ = {
 			isa = XCConfigurationList;
@@ -601,6 +610,7 @@
 				907F3C4E1ED5A8E3005FE929 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		907F3C4F1ED5A8E3005FE929 /* Build configuration list for PBXNativeTarget "ProtobufSampleAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -609,6 +619,7 @@
 				907F3C511ED5A8E3005FE929 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
