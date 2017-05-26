@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		904858291ED86351000D1EC7 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904858281ED86351000D1EC7 /* TransactionsViewController.swift */; };
 		907F3C251ED5A8E3005FE929 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F3C241ED5A8E3005FE929 /* AppDelegate.swift */; };
 		907F3C271ED5A8E3005FE929 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F3C261ED5A8E3005FE929 /* ViewController.swift */; };
 		907F3C2A1ED5A8E3005FE929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907F3C281ED5A8E3005FE929 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		28444CC7979CAC0BA4D2449E /* Pods_ProtobufSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProtobufSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F30124A5731598B06669C9 /* Pods-ProtobufSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtobufSampleApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProtobufSampleApp/Pods-ProtobufSampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		904858281ED86351000D1EC7 /* TransactionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
 		907F3C211ED5A8E3005FE929 /* ProtobufSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProtobufSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907F3C241ED5A8E3005FE929 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		907F3C261ED5A8E3005FE929 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				907F3C2D1ED5A8E3005FE929 /* LaunchScreen.storyboard */,
 				907F3C301ED5A8E3005FE929 /* Info.plist */,
 				907F3C521ED5B836005FE929 /* HttpClient.swift */,
+				904858281ED86351000D1EC7 /* TransactionsViewController.swift */,
 			);
 			path = ProtobufSampleApp;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				907F3C271ED5A8E3005FE929 /* ViewController.swift in Sources */,
 				907F3C531ED5B836005FE929 /* HttpClient.swift in Sources */,
 				907F3C251ED5A8E3005FE929 /* AppDelegate.swift in Sources */,
+				904858291ED86351000D1EC7 /* TransactionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

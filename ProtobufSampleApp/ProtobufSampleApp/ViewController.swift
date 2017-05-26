@@ -15,9 +15,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     let httpClient = HttpClient()
-    
-    
     var accountList: AccountList?
+    
+    var selectedAccount: Account?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,5 +79,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         cell.textLabel?.text = name
         return cell
+    }
+    
+    // MARK: - UITableViewCellDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let account = accountList?.accounts[indexPath.row] else {
+            return
+        }
+        selectedAccount = account
+        performSegue(withIdentifier: "showTransactions", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showTransactions" {
+            let destinationViewController = segue.destination as! TransactionsViewController
+            destinationViewController.selectedAccount = selectedAccount
+        }
     }
 }
