@@ -40,10 +40,9 @@
                                     <segment title="Protobuf"/>
                                 </segments>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVM-B5-KUP" userLabel="Duration">
-                                <rect key="frame" x="159" y="638" width="200" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="TVM-B5-KUP" userLabel="Duration">
+                                <rect key="frame" x="85" y="638" width="274" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="gj7-Jd-Ggp"/>
                                     <constraint firstAttribute="height" constant="21" id="m9P-SO-YoY"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="y2P-TY-eJq"/>
                                 </constraints>
@@ -69,6 +68,7 @@
                             <constraint firstItem="dee-7L-nh1" firstAttribute="top" secondItem="6i9-Zz-kKE" secondAttribute="bottom" constant="8" id="IHZ-zL-MI7"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wBd-Jk-x5C" secondAttribute="bottom" constant="4" id="NSd-2c-6ei"/>
                             <constraint firstItem="6i9-Zz-kKE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="OYV-C8-Yvz"/>
+                            <constraint firstItem="TVM-B5-KUP" firstAttribute="leading" secondItem="wBd-Jk-x5C" secondAttribute="trailing" constant="5" id="Sxq-vT-CvE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TVM-B5-KUP" secondAttribute="bottom" constant="8" id="Tnt-Cn-7Gb"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TVM-B5-KUP" secondAttribute="bottom" constant="8" id="UIy-ZD-lj9"/>
                             <constraint firstItem="dee-7L-nh1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WCT-eZ-dW9"/>

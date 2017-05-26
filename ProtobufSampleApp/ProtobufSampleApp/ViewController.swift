@@ -38,7 +38,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     self.durationLabel.text = ""
                     return
                 }
-                self.durationLabel.text = String(totalDuration)
+                guard let requestDuration = durationTimes?.requestDuration else {
+                    self.durationLabel.text = ""
+                    return
+                }
+                self.durationLabel.text = String(format: "Request: %.4f Total: %.4f", requestDuration, totalDuration)
                 self.tableView.reloadData()
             }
         } else {
@@ -49,7 +53,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     self.durationLabel.text = ""
                     return
                 }
-                self.durationLabel.text = String(totalDuration)
+                guard let requestDuration = durationTimes?.requestDuration else {
+                    self.durationLabel.text = ""
+                    return
+                }
+                self.durationLabel.text = String(format: "Request: %.4f Total: %.4f", requestDuration, totalDuration)
                 self.tableView.reloadData()
             }
         }
