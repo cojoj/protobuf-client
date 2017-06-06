@@ -8,12 +8,15 @@
 
 import UIKit
 
-class TransactionsViewController: UIViewController {
+class TransactionsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var acceptHeaderSegmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var durationLabel: UILabel!
     
     var selectedAccount: Account? = nil
+    
+    let httpClient = HttpClient()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,16 +30,58 @@ class TransactionsViewController: UIViewController {
     }
     
     @IBAction func refreshButtonPressed(_ sender: Any) {
+        if acceptHeaderSegmentedControl.selectedSegmentIndex == 0 {
+            httpClient.getTransactionList(acceptHeader: .json, id: (self.selectedAccount?.id)!) {
+                result, transactions, durationTimes in
+                self.selectedAccount?.transactions = transactions
+                guard let totalDuration = durationTimes?.totalDuration else {
+                    self.durationLabel.text = ""
+                    return
+                }
+                guard let requestDuration = durationTimes?.requestDuration else {
+                    self.durationLabel.text = ""
+                    return
+                }
+                self.durationLabel.text = String(format: "Request: %.4f Total: %.4f", requestDuration, totalDuration)
+                self.tableView.reloadData()
+            }
+        } else {
+            httpClient.getTransactionList(acceptHeader: .protobuf, id: (self.selectedAccount?.id)!) {
+                result, transactions, durationTimes in
+                self.selectedAccount?.transactions = transactions
+                guard let totalDuration = durationTimes?.totalDuration else {
+                    self.durationLabel.text = ""
+                    return
+                }
+                guard let requestDuration = durationTimes?.requestDuration else {
+                    self.durationLabel.text = ""
+                    return
+                }
+                self.durationLabel.text = String(format: "Request: %.4f Total: %.4f", requestDuration, totalDuration)
+                self.tableView.reloadData()
+            }
+        }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let count = self.selectedAccount?.transactions.count else {
+            return 0
+        }
+        return count
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "TransactionCell", for: indexPath) as! TransactionTableViewCell
+        guard let transactionDate = self.selectedAccount?.transactions[indexPath.row].transactionDate else {
+            return cell
+        }
+        guard let details = self.selectedAccount?.transactions[indexPath.row].details else {
+            return cell
+        }
+        cell.dateLabel?.text = transactionDate
+        cell.descriptionLabel?.text = details
+        return cell
+    }
 }
