@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AccountsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var acceptHeaderSegmentedControl: UISegmentedControl!
     @IBOutlet weak var durationLabel: UILabel!
@@ -33,34 +33,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if acceptHeaderSegmentedControl.selectedSegmentIndex == 0 {
             httpClient.getAccountList(acceptHeader: .json) {
                 result, accountList, durationTimes in
-                self.accountList = accountList
-                guard let totalDuration = durationTimes?.totalDuration else {
-                    self.durationLabel.text = ""
-                    return
-                }
-                guard let requestDuration = durationTimes?.requestDuration else {
-                    self.durationLabel.text = ""
-                    return
-                }
-                self.durationLabel.text = String(format: "Request: %.4f Total: %.4f", requestDuration, totalDuration)
-                self.tableView.reloadData()
+                self.updateUI(result: result, accountList: accountList, durationTimes: durationTimes)
             }
         } else {
             httpClient.getAccountList(acceptHeader: .protobuf) {
                 result, accountList, durationTimes in
-                self.accountList = accountList
-                guard let totalDuration = durationTimes?.totalDuration else {
-                    self.durationLabel.text = ""
-                    return
-                }
-                guard let requestDuration = durationTimes?.requestDuration else {
-                    self.durationLabel.text = ""
-                    return
-                }
-                self.durationLabel.text = String(format: "Request: %.4f Total: %.4f", requestDuration, totalDuration)
-                self.tableView.reloadData()
+                self.updateUI(result: result, accountList: accountList, durationTimes: durationTimes)
             }
         }
+    }
+    
+    func updateUI(result: Bool, accountList: AccountList?, durationTimes: DurationTimes?) {
+        self.accountList = accountList
+        guard let totalDuration = durationTimes?.totalDuration else {
+            self.durationLabel.text = ""
+            return
+        }
+        guard let requestDuration = durationTimes?.requestDuration else {
+            self.durationLabel.text = ""
+            return
+        }
+        self.durationLabel.text = String(format: "Request: %.4f Total: %.4f", requestDuration, totalDuration)
+        self.tableView.reloadData()
     }
     
     // MARK: - UITableViewDataSource

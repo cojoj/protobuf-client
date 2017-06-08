@@ -33,34 +33,28 @@ class TransactionsViewController: UIViewController, UITableViewDataSource, UITab
         if acceptHeaderSegmentedControl.selectedSegmentIndex == 0 {
             httpClient.getTransactionList(acceptHeader: .json, id: (self.selectedAccount?.id)!) {
                 result, transactions, durationTimes in
-                self.selectedAccount?.transactions = transactions
-                guard let totalDuration = durationTimes?.totalDuration else {
-                    self.durationLabel.text = ""
-                    return
-                }
-                guard let requestDuration = durationTimes?.requestDuration else {
-                    self.durationLabel.text = ""
-                    return
-                }
-                self.durationLabel.text = String(format: "Request: %.4f Total: %.4f", requestDuration, totalDuration)
-                self.tableView.reloadData()
+                self.updateUI(result: result, transactions: transactions, durationTimes: durationTimes)
             }
         } else {
             httpClient.getTransactionList(acceptHeader: .protobuf, id: (self.selectedAccount?.id)!) {
                 result, transactions, durationTimes in
-                self.selectedAccount?.transactions = transactions
-                guard let totalDuration = durationTimes?.totalDuration else {
-                    self.durationLabel.text = ""
-                    return
-                }
-                guard let requestDuration = durationTimes?.requestDuration else {
-                    self.durationLabel.text = ""
-                    return
-                }
-                self.durationLabel.text = String(format: "Request: %.4f Total: %.4f", requestDuration, totalDuration)
-                self.tableView.reloadData()
+                self.updateUI(result: result, transactions: transactions, durationTimes: durationTimes)
             }
         }
+    }
+    
+    func updateUI(result: Bool, transactions: Array<Transaction>, durationTimes: DurationTimes?) {
+        self.selectedAccount?.transactions = transactions
+        guard let totalDuration = durationTimes?.totalDuration else {
+            self.durationLabel.text = ""
+            return
+        }
+        guard let requestDuration = durationTimes?.requestDuration else {
+            self.durationLabel.text = ""
+            return
+        }
+        self.durationLabel.text = String(format: "Request: %.4f Total: %.4f", requestDuration, totalDuration)
+        self.tableView.reloadData()
     }
 
     // MARK: - UITableViewDataSource
