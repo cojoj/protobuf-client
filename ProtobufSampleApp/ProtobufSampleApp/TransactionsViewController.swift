@@ -46,7 +46,7 @@ class TransactionsViewController: UIViewController, UITableViewDataSource, UITab
         }
     }
     
-    func updateUI(result: Bool, transactions: Array<Transaction>, durationTimes: DurationTimes?) {
+    func updateUI(result: Bool, transactions: [Transaction], durationTimes: DurationTimes?) {
         self.selectedAccount?.transactions = transactions
         guard let totalDuration = durationTimes?.totalDuration, let requestDuration = durationTimes?.requestDuration else {
             self.durationLabel.text = ""

@@ -29,7 +29,7 @@ class HttpClient {
         }
     }
     
-    func getTransactionList(acceptHeader: AcceptHeader, id: UInt64, completion: @escaping (Bool, Array<Transaction>, DurationTimes?) -> Void) {
+    func getTransactionList(acceptHeader: AcceptHeader, id: UInt64, completion: @escaping (Bool, [Transaction], DurationTimes?) -> Void) {
         switch acceptHeader {
         case .json:
             getTransactionListJSON(id: id, completion: completion)
