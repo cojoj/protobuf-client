@@ -2,7 +2,7 @@ use_frameworks!
 
 target 'ProtobufSampleApp' do
   pod 'Alamofire', '~> 4.4'
-  pod 'SwiftProtobuf', :git => 'https://github.com/apple/swift-protobuf.git', :commit => '74061f9cf1b78e8ebf3d515cb0857b0a7446ea11'
+  pod 'SwiftProtobuf', '0.9.903'
 end
 
 post_install do |installer|
