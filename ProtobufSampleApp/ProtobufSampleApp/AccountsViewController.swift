@@ -54,7 +54,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
             return
         }
         self.durationLabel.text = String(format: "Request: %.4f Total: %.4f", requestDuration, totalDuration)
-        NSLog("Request: %.4f Total: %.4f", requestDuration, totalDuration)
+        print("Request: \(requestDuration) Total: \(totalDuration)")
         self.tableView.reloadData()
     }
     
