@@ -14,29 +14,10 @@
 		907F3C2A1ED5A8E3005FE929 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907F3C281ED5A8E3005FE929 /* Main.storyboard */; };
 		907F3C2C1ED5A8E3005FE929 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 907F3C2B1ED5A8E3005FE929 /* Assets.xcassets */; };
 		907F3C2F1ED5A8E3005FE929 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907F3C2D1ED5A8E3005FE929 /* LaunchScreen.storyboard */; };
-		907F3C3A1ED5A8E3005FE929 /* ProtobufSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F3C391ED5A8E3005FE929 /* ProtobufSampleAppTests.swift */; };
-		907F3C451ED5A8E3005FE929 /* ProtobufSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F3C441ED5A8E3005FE929 /* ProtobufSampleAppUITests.swift */; };
 		907F3C531ED5B836005FE929 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F3C521ED5B836005FE929 /* HttpClient.swift */; };
 		907F3C561ED5BA48005FE929 /* DataModel.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907F3C551ED5BA48005FE929 /* DataModel.pb.swift */; };
 		9BDD7A256D9E72D2457103B2 /* Pods_ProtobufSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28444CC7979CAC0BA4D2449E /* Pods_ProtobufSampleApp.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		907F3C361ED5A8E3005FE929 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 907F3C191ED5A8E3005FE929 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 907F3C201ED5A8E3005FE929;
-			remoteInfo = ProtobufSampleApp;
-		};
-		907F3C411ED5A8E3005FE929 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 907F3C191ED5A8E3005FE929 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 907F3C201ED5A8E3005FE929;
-			remoteInfo = ProtobufSampleApp;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		28444CC7979CAC0BA4D2449E /* Pods_ProtobufSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProtobufSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,12 +31,6 @@
 		907F3C2B1ED5A8E3005FE929 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		907F3C2E1ED5A8E3005FE929 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		907F3C301ED5A8E3005FE929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		907F3C351ED5A8E3005FE929 /* ProtobufSampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProtobufSampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		907F3C391ED5A8E3005FE929 /* ProtobufSampleAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtobufSampleAppTests.swift; sourceTree = "<group>"; };
-		907F3C3B1ED5A8E3005FE929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		907F3C401ED5A8E3005FE929 /* ProtobufSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProtobufSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		907F3C441ED5A8E3005FE929 /* ProtobufSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtobufSampleAppUITests.swift; sourceTree = "<group>"; };
-		907F3C461ED5A8E3005FE929 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		907F3C521ED5B836005FE929 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		907F3C551ED5BA48005FE929 /* DataModel.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.pb.swift; sourceTree = "<group>"; };
 		A95FC2D32F517B2654341E26 /* Pods-ProtobufSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProtobufSampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProtobufSampleApp/Pods-ProtobufSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -67,20 +42,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BDD7A256D9E72D2457103B2 /* Pods_ProtobufSampleApp.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		907F3C321ED5A8E3005FE929 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		907F3C3D1ED5A8E3005FE929 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				907F3C231ED5A8E3005FE929 /* ProtobufSampleApp */,
-				907F3C381ED5A8E3005FE929 /* ProtobufSampleAppTests */,
-				907F3C431ED5A8E3005FE929 /* ProtobufSampleAppUITests */,
 				907F3C221ED5A8E3005FE929 /* Products */,
 				8B620A7E5AE2E1F555B33B4A /* Pods */,
 				A9B5AF5663EAD8F553B59B6B /* Frameworks */,
@@ -112,8 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				907F3C211ED5A8E3005FE929 /* ProtobufSampleApp.app */,
-				907F3C351ED5A8E3005FE929 /* ProtobufSampleAppTests.xctest */,
-				907F3C401ED5A8E3005FE929 /* ProtobufSampleAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,24 +90,6 @@
 				9048582A1ED86ECE000D1EC7 /* TransactionTableViewCell.swift */,
 			);
 			path = ProtobufSampleApp;
-			sourceTree = "<group>";
-		};
-		907F3C381ED5A8E3005FE929 /* ProtobufSampleAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				907F3C391ED5A8E3005FE929 /* ProtobufSampleAppTests.swift */,
-				907F3C3B1ED5A8E3005FE929 /* Info.plist */,
-			);
-			path = ProtobufSampleAppTests;
-			sourceTree = "<group>";
-		};
-		907F3C431ED5A8E3005FE929 /* ProtobufSampleAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				907F3C441ED5A8E3005FE929 /* ProtobufSampleAppUITests.swift */,
-				907F3C461ED5A8E3005FE929 /* Info.plist */,
-			);
-			path = ProtobufSampleAppUITests;
 			sourceTree = "<group>";
 		};
 		A9B5AF5663EAD8F553B59B6B /* Frameworks */ = {
@@ -184,42 +123,6 @@
 			productReference = 907F3C211ED5A8E3005FE929 /* ProtobufSampleApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		907F3C341ED5A8E3005FE929 /* ProtobufSampleAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 907F3C4C1ED5A8E3005FE929 /* Build configuration list for PBXNativeTarget "ProtobufSampleAppTests" */;
-			buildPhases = (
-				907F3C311ED5A8E3005FE929 /* Sources */,
-				907F3C321ED5A8E3005FE929 /* Frameworks */,
-				907F3C331ED5A8E3005FE929 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				907F3C371ED5A8E3005FE929 /* PBXTargetDependency */,
-			);
-			name = ProtobufSampleAppTests;
-			productName = ProtobufSampleAppTests;
-			productReference = 907F3C351ED5A8E3005FE929 /* ProtobufSampleAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		907F3C3F1ED5A8E3005FE929 /* ProtobufSampleAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 907F3C4F1ED5A8E3005FE929 /* Build configuration list for PBXNativeTarget "ProtobufSampleAppUITests" */;
-			buildPhases = (
-				907F3C3C1ED5A8E3005FE929 /* Sources */,
-				907F3C3D1ED5A8E3005FE929 /* Frameworks */,
-				907F3C3E1ED5A8E3005FE929 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				907F3C421ED5A8E3005FE929 /* PBXTargetDependency */,
-			);
-			name = ProtobufSampleAppUITests;
-			productName = ProtobufSampleAppUITests;
-			productReference = 907F3C401ED5A8E3005FE929 /* ProtobufSampleAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -234,18 +137,6 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 784PVL6CY6;
 						ProvisioningStyle = Automatic;
-					};
-					907F3C341ED5A8E3005FE929 = {
-						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 784PVL6CY6;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 907F3C201ED5A8E3005FE929;
-					};
-					907F3C3F1ED5A8E3005FE929 = {
-						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 784PVL6CY6;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 907F3C201ED5A8E3005FE929;
 					};
 				};
 			};
@@ -263,8 +154,6 @@
 			projectRoot = "";
 			targets = (
 				907F3C201ED5A8E3005FE929 /* ProtobufSampleApp */,
-				907F3C341ED5A8E3005FE929 /* ProtobufSampleAppTests */,
-				907F3C3F1ED5A8E3005FE929 /* ProtobufSampleAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -277,20 +166,6 @@
 				907F3C2F1ED5A8E3005FE929 /* LaunchScreen.storyboard in Resources */,
 				907F3C2C1ED5A8E3005FE929 /* Assets.xcassets in Resources */,
 				907F3C2A1ED5A8E3005FE929 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		907F3C331ED5A8E3005FE929 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		907F3C3E1ED5A8E3005FE929 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,36 +233,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		907F3C311ED5A8E3005FE929 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				907F3C3A1ED5A8E3005FE929 /* ProtobufSampleAppTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		907F3C3C1ED5A8E3005FE929 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				907F3C451ED5A8E3005FE929 /* ProtobufSampleAppUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		907F3C371ED5A8E3005FE929 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 907F3C201ED5A8E3005FE929 /* ProtobufSampleApp */;
-			targetProxy = 907F3C361ED5A8E3005FE929 /* PBXContainerItemProxy */;
-		};
-		907F3C421ED5A8E3005FE929 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 907F3C201ED5A8E3005FE929 /* ProtobufSampleApp */;
-			targetProxy = 907F3C411ED5A8E3005FE929 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		907F3C281ED5A8E3005FE929 /* Main.storyboard */ = {
@@ -532,64 +378,6 @@
 			};
 			name = Release;
 		};
-		907F3C4D1ED5A8E3005FE929 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 784PVL6CY6;
-				INFOPLIST_FILE = ProtobufSampleAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codete.ProtobufSampleAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProtobufSampleApp.app/ProtobufSampleApp";
-			};
-			name = Debug;
-		};
-		907F3C4E1ED5A8E3005FE929 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 784PVL6CY6;
-				INFOPLIST_FILE = ProtobufSampleAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codete.ProtobufSampleAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProtobufSampleApp.app/ProtobufSampleApp";
-			};
-			name = Release;
-		};
-		907F3C501ED5A8E3005FE929 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 784PVL6CY6;
-				INFOPLIST_FILE = ProtobufSampleAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codete.ProtobufSampleAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = ProtobufSampleApp;
-			};
-			name = Debug;
-		};
-		907F3C511ED5A8E3005FE929 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 784PVL6CY6;
-				INFOPLIST_FILE = ProtobufSampleAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codete.ProtobufSampleAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = ProtobufSampleApp;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -607,24 +395,6 @@
 			buildConfigurations = (
 				907F3C4A1ED5A8E3005FE929 /* Debug */,
 				907F3C4B1ED5A8E3005FE929 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		907F3C4C1ED5A8E3005FE929 /* Build configuration list for PBXNativeTarget "ProtobufSampleAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				907F3C4D1ED5A8E3005FE929 /* Debug */,
-				907F3C4E1ED5A8E3005FE929 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		907F3C4F1ED5A8E3005FE929 /* Build configuration list for PBXNativeTarget "ProtobufSampleAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				907F3C501ED5A8E3005FE929 /* Debug */,
-				907F3C511ED5A8E3005FE929 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
