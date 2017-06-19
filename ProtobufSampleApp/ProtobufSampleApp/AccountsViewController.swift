@@ -30,16 +30,19 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     @IBAction func getListButtonPressed(_ sender: Any) {
-        if acceptHeaderSegmentedControl.selectedSegmentIndex == 0 {
+        switch acceptHeaderSegmentedControl.selectedSegmentIndex {
+        case 0:
             httpClient.getAccountList(acceptHeader: .json) {
                 result, accountList, durationTimes in
                 self.updateUI(result: result, accountList: accountList, durationTimes: durationTimes)
             }
-        } else {
+        case 1:
             httpClient.getAccountList(acceptHeader: .protobuf) {
                 result, accountList, durationTimes in
                 self.updateUI(result: result, accountList: accountList, durationTimes: durationTimes)
             }
+        default:
+            break
         }
     }
     

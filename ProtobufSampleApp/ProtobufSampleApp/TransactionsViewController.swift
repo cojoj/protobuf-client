@@ -30,16 +30,19 @@ class TransactionsViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     @IBAction func refreshButtonPressed(_ sender: Any) {
-        if acceptHeaderSegmentedControl.selectedSegmentIndex == 0 {
+        switch acceptHeaderSegmentedControl.selectedSegmentIndex {
+        case 0:
             httpClient.getTransactionList(acceptHeader: .json, id: (self.selectedAccount?.id)!) {
                 result, transactions, durationTimes in
                 self.updateUI(result: result, transactions: transactions, durationTimes: durationTimes)
             }
-        } else {
+        case 1:
             httpClient.getTransactionList(acceptHeader: .protobuf, id: (self.selectedAccount?.id)!) {
                 result, transactions, durationTimes in
                 self.updateUI(result: result, transactions: transactions, durationTimes: durationTimes)
             }
+        default:
+            break
         }
     }
     
