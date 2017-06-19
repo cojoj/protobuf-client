@@ -48,14 +48,11 @@ class TransactionsViewController: UIViewController, UITableViewDataSource, UITab
     
     func updateUI(result: Bool, transactions: Array<Transaction>, durationTimes: DurationTimes?) {
         self.selectedAccount?.transactions = transactions
-        guard let totalDuration = durationTimes?.totalDuration else {
+        guard let totalDuration = durationTimes?.totalDuration, let requestDuration = durationTimes?.requestDuration else {
             self.durationLabel.text = ""
             return
         }
-        guard let requestDuration = durationTimes?.requestDuration else {
-            self.durationLabel.text = ""
-            return
-        }
+        
         self.durationLabel.text = String(format: "Request: %.4f Total: %.4f", requestDuration, totalDuration)
         print("Request: \(requestDuration) Total: \(totalDuration)")
         self.tableView.reloadData()
@@ -64,20 +61,16 @@ class TransactionsViewController: UIViewController, UITableViewDataSource, UITab
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = self.selectedAccount?.transactions.count else {
-            return 0
-        }
-        return count
+        return self.selectedAccount?.transactions.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "TransactionCell", for: indexPath) as! TransactionTableViewCell
-        guard let transactionDate = self.selectedAccount?.transactions[indexPath.row].transactionDate else {
+        guard let transactionDate = self.selectedAccount?.transactions[indexPath.row].transactionDate,
+            let details = self.selectedAccount?.transactions[indexPath.row].details else {
             return cell
         }
-        guard let details = self.selectedAccount?.transactions[indexPath.row].details else {
-            return cell
-        }
+        
         cell.dateLabel?.text = transactionDate
         cell.descriptionLabel?.text = details
         return cell

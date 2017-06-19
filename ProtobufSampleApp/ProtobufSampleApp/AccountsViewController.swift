@@ -48,14 +48,11 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func updateUI(result: Bool, accountList: AccountList?, durationTimes: DurationTimes?) {
         self.accountList = accountList
-        guard let totalDuration = durationTimes?.totalDuration else {
+        guard let totalDuration = durationTimes?.totalDuration, let requestDuration = durationTimes?.requestDuration else {
             self.durationLabel.text = ""
             return
         }
-        guard let requestDuration = durationTimes?.requestDuration else {
-            self.durationLabel.text = ""
-            return
-        }
+        
         self.durationLabel.text = String(format: "Request: %.4f Total: %.4f", requestDuration, totalDuration)
         print("Request: \(requestDuration) Total: \(totalDuration)")
         self.tableView.reloadData()
@@ -64,10 +61,7 @@ class AccountsViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let count = self.accountList?.accounts.count else {
-            return 0
-        }
-        return count
+        return self.accountList?.accounts.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

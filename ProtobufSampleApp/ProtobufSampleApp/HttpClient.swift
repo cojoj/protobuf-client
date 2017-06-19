@@ -84,7 +84,7 @@ class HttpClient {
         }
     }
     
-    private func getTransactionListJSON(id: UInt64, completion: @escaping (Bool, Array<Transaction>, DurationTimes?) -> Void) {
+    private func getTransactionListJSON(id: UInt64, completion: @escaping (Bool, [Transaction], DurationTimes?) -> Void) {
         let headers: HTTPHeaders = [
             "Accept" : "application/json"
         ]
@@ -108,7 +108,7 @@ class HttpClient {
         }
     }
     
-    private func getTransactionListProtobuf(id: UInt64, completion: @escaping (Bool, Array<Transaction>, DurationTimes?) -> Void) {
+    private func getTransactionListProtobuf(id: UInt64, completion: @escaping (Bool, [Transaction], DurationTimes?) -> Void) {
         let headers: HTTPHeaders = [
             "Accept" : "application/octet-stream"
         ]
