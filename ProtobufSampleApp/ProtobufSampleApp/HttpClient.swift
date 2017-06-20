@@ -8,88 +8,56 @@
 
 import Alamofire
 
-let host = "http://localhost:8080"
+fileprivate let host = "http://localhost:8080"
 
 enum AcceptHeader {
-    case json, protobuf
+    case json
+    case protobuf
+
+    func generate() -> [String: String] {
+        switch self {
+        case .json:
+            return ["Accept": "application/json"]
+        case .protobuf:
+            return ["Accept": "application/octet-stream"]
+        }
+    }
 }
 
 struct DurationTimes {
-    var totalDuration: TimeInterval
-    var requestDuration: TimeInterval
+    let totalDuration: TimeInterval
+    let requestDuration: TimeInterval
 }
 
-class HttpClient {
+final class HttpClient {
     func getAccountList(acceptHeader: AcceptHeader, completion: @escaping (Bool, AccountList?, DurationTimes?) -> Void) {
-        switch acceptHeader {
-        case .json:
-            getAccountListJSON(completion: completion)
-        case .protobuf:
-            getAccountListProtobuf(completion: completion)
+        Alamofire.request(host + "/accountList", method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: acceptHeader.generate())
+            .validate()
+            .responseData { response in
+                guard let data = response.data else {
+                    completion(false, nil, nil)
+                    return
+                }
+
+                do {
+                    var accountList: AccountList!
+                    switch acceptHeader {
+                    case .protobuf:
+                        accountList = try AccountList(serializedData: data)
+                    case .json:
+                        accountList = try AccountList(jsonUTF8Data: data)
+                    }
+                    
+                    let durationTimes = DurationTimes(totalDuration: response.timeline.totalDuration, requestDuration: response.timeline.requestDuration)
+                    completion(true, accountList, durationTimes)
+                } catch {
+                    print(error)
+                }
         }
     }
     
     func getTransactionList(acceptHeader: AcceptHeader, id: UInt64, completion: @escaping (Bool, [Transaction], DurationTimes?) -> Void) {
-        switch acceptHeader {
-        case .json:
-            getTransactionListJSON(id: id, completion: completion)
-        case .protobuf:
-            getTransactionListProtobuf(id: id, completion: completion)
-        }
-    }
-    
-    private func getAccountListProtobuf(completion: @escaping (Bool, AccountList?, DurationTimes?) -> Void) {
-        let headers: HTTPHeaders = [
-            "Accept" : "application/octet-stream"
-        ]
-        
-        Alamofire.request(host + "/accountList", method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers)
-            .validate()
-            .responseData { response in
-                guard let data = response.data else {
-                    completion(false, nil, nil)
-                    return
-                }
-                
-                do {
-                    let accountList = try AccountList(serializedData: data)
-                    let durationTimes = DurationTimes(totalDuration: response.timeline.totalDuration, requestDuration: response.timeline.requestDuration)
-                    completion(true, accountList, durationTimes)
-                } catch let error as NSError {
-                    print(error.localizedDescription)
-                }
-        }
-    }
-    
-    private func getAccountListJSON(completion: @escaping (Bool, AccountList?, DurationTimes?) -> Void) {
-        let headers: HTTPHeaders = [
-            "Accept" : "application/json"
-        ]
-        
-        Alamofire.request(host + "/accountList", method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers)
-            .validate()
-            .responseData { response in
-                guard let data = response.data else {
-                    completion(false, nil, nil)
-                    return
-                }
-                
-                do {
-                    let accountList = try AccountList(jsonUTF8Data: data)
-                    let durationTimes = DurationTimes(totalDuration: response.timeline.totalDuration, requestDuration: response.timeline.requestDuration)
-                    completion(true, accountList, durationTimes)
-                } catch let error as NSError {
-                    print(error.localizedDescription)
-                }
-        }
-    }
-    
-    private func getTransactionListJSON(id: UInt64, completion: @escaping (Bool, [Transaction], DurationTimes?) -> Void) {
-        let headers: HTTPHeaders = [
-            "Accept" : "application/json"
-        ]
-        
-        Alamofire.request(host + "/account/" + String(id), method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers)
+        Alamofire.request(host + "/account/" + String(id), method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: acceptHeader.generate())
             .validate()
             .responseData { response in
                 guard let data = response.data else {
@@ -98,36 +66,18 @@ class HttpClient {
                 }
                 
                 do {
-                    let account = try Account(jsonUTF8Data: data)
+                    var account: Account!
+                    switch acceptHeader {
+                    case .protobuf:
+                        account = try Account(serializedData: data)
+                    case .json:
+                        account = try Account(jsonUTF8Data: data)
+                    }
                     let transactionList = account.transactions
                     let durationTimes = DurationTimes(totalDuration: response.timeline.totalDuration, requestDuration: response.timeline.requestDuration)
                     completion(true, transactionList, durationTimes)
-                } catch let error as NSError {
-                    print(error.localizedDescription)
-                }
-        }
-    }
-    
-    private func getTransactionListProtobuf(id: UInt64, completion: @escaping (Bool, [Transaction], DurationTimes?) -> Void) {
-        let headers: HTTPHeaders = [
-            "Accept" : "application/octet-stream"
-        ]
-        
-        Alamofire.request(host + "/account/" + String(id), method: .get, parameters: nil, encoding: URLEncoding.httpBody, headers: headers)
-            .validate()
-            .responseData { response in
-                guard let data = response.data else {
-                    completion(false, [], nil)
-                    return
-                }
-                
-                do {
-                    let account = try Account(serializedData: data)
-                    let transactionList = account.transactions
-                    let durationTimes = DurationTimes(totalDuration: response.timeline.totalDuration, requestDuration: response.timeline.requestDuration)
-                    completion(true, transactionList, durationTimes)
-                } catch let error as NSError {
-                    print(error.localizedDescription)
+                } catch {
+                    print(error)
                 }
         }
     }
